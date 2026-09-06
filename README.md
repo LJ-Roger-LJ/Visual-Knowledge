@@ -11,3 +11,4 @@
   - [第五章](./OpenCV/OpenCV3/第五章.md)
   - [第六章](./OpenCV/OpenCV3/第六章.md)
   - [第七章](./OpenCV/OpenCV3/第七章.md)
+  - [第八章](./OpenCV/OpenCV3/第八章.md)
