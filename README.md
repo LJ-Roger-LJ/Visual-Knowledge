@@ -7,3 +7,4 @@
   - [第一章](./OpenCV/OpenCV3/第一章.md)
   - [第二章](./OpenCV/OpenCV3/第二章.md)
   - [第三章](./OpenCV/OpenCV3/第三章.md)
+  - [第四章](./OpenCV/OpenCV3/第四章.md)
