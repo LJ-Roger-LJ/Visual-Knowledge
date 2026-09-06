@@ -9,3 +9,4 @@
   - [第三章](./OpenCV/OpenCV3/第三章.md)
   - [第四章](./OpenCV/OpenCV3/第四章.md)
   - [第五章](./OpenCV/OpenCV3/第五章.md)
+  - [第六章](./OpenCV/OpenCV3/第六章.md)
