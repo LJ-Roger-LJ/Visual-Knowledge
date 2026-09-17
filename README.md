@@ -1,6 +1,27 @@
 # 视觉知识记录(OpenCV,Vision Master,Halcon,以及图像视觉基础知识) 
 
-## 1、图像基础 
+## 1、图像基础  
+
+### 1.1 Computer Vision:Algorithms and Applications 2nd Edition
+  - [融合章节规划大纲](./机器视觉原理应用/Computer VisionAlgorithms and Applications 2nd Edition/融合章节规划大纲.md)
+  - [第1章 绪论](./机器视觉原理应用/Computer VisionAlgorithms and Applications 2nd Edition/第1章_绪论.md)
+  - [第2章 图像形成](./机器视觉原理应用/Computer VisionAlgorithms and Applications 2nd Edition/第2章_图像形成.md)
+  - [第3章 图像处理](./机器视觉原理应用/Computer VisionAlgorithms and Applications 2nd Edition/第3章_图像处理.md)
+  - [第4章 模型拟合与优化](./机器视觉原理应用/Computer VisionAlgorithms and Applications 2nd Edition/第4章_模型拟合与优化.md)
+  - [第5章 深度学习](./机器视觉原理应用/Computer VisionAlgorithms and Applications 2nd Edition/第5章_深度学习.md)
+  - [第6章 视觉识别](./机器视觉原理应用/Computer VisionAlgorithms and Applications 2nd Edition/第6章_视觉识别.md)
+  - [第7章 特征检测与匹配](./机器视觉原理应用/Computer VisionAlgorithms and Applications 2nd Edition/第7章_特征检测与匹配.md)
+  - [第8章 图像对齐与拼接](./机器视觉原理应用/Computer VisionAlgorithms and Applications 2nd Edition/第8章_图像对齐与拼接.md)
+  - [第9章 运动估计](./机器视觉原理应用/Computer VisionAlgorithms and Applications 2nd Edition/第9章_运动估计.md)
+  - [第10章 计算摄影](./机器视觉原理应用/Computer VisionAlgorithms and Applications 2nd Edition/第10章_计算摄影.md)
+  - [第11章 运动恢复结构与同时定位建图](./机器视觉原理应用/Computer VisionAlgorithms and Applications 2nd Edition/第11章_运动恢复结构与同时定位建图.md)
+  - [第12章 深度估计](./机器视觉原理应用/Computer VisionAlgorithms and Applications 2nd Edition/第12章_深度估计.md)
+  - [第13章 三维重建](./机器视觉原理应用/Computer VisionAlgorithms and Applications 2nd Edition/第13章_三维重建.md)
+  - [第14章 基于图像的绘制](./机器视觉原理应用/Computer VisionAlgorithms and Applications 2nd Edition/第14章_基于图像的绘制.md)
+  - [第15章 结语](./机器视觉原理应用/Computer VisionAlgorithms and Applications 2nd Edition/第15章_结语.md)
+  - [附录A 线性代数与数值方法](./机器视觉原理应用/Computer VisionAlgorithms and Applications 2nd Edition/附录A_线性代数与数值方法.md)
+  - [附录B 贝叶斯建模与推断](./机器视觉原理应用/Computer VisionAlgorithms and Applications 2nd Edition/附录B_贝叶斯建模与推断.md)
+  - [附录C 补充材料](./机器视觉原理应用/Computer VisionAlgorithms and Applications 2nd Edition/附录C_补充材料.md)
 
 ## 2、OpenCV
   ### OpenCV3
