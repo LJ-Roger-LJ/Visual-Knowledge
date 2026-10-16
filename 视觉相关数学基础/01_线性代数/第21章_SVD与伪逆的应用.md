@@ -14,7 +14,7 @@
 
 #### 最小二乘与法方程
 
-最小二乘处理超定方程组 Ax=b：A 是 m $\times$ n，方程个数多于未知数（m>n）。历史上 Legendre 在 1805 年发表彗星轨道方法时写出这个原则；Gauss 至迟在 1801 年用它确定小行星 Ceres 的轨道，1810 年在 Pallas 的论文里发表，同一篇论文引入了带主元的 Gauss 消元。Gauss 解过 11 个方程、6 个未知数的系统。多余方程来自重复测量。
+最小二乘处理超定方程组 Ax=b：A 是 m × n，方程个数多于未知数（m>n）。历史上 Legendre 在 1805 年发表彗星轨道方法时写出这个原则；Gauss 至迟在 1801 年用它确定小行星 Ceres 的轨道，1810 年在 Pallas 的论文里发表，同一篇论文引入了带主元的 Gauss 消元。Gauss 解过 11 个方程、6 个未知数的系统。多余方程来自重复测量。
 
 例 21.1：平面上一点沿直线 y=cx+d 运动，观测到 (x_1,y_1)、(x_2,y_2)、(x_3,y_3)。无误差时两个方程就够确定 c,d；有误差时三个方程可能不相容。最小二乘选择 (c,d)，使
 
@@ -61,9 +61,9 @@ $$
 
 #### 最小范数解与伪逆
 
-定理 21.1：任意 m $\times$ n 的实线性系统 Ax=b 都有唯一的最小范数最小二乘解 x^{+}。
+定理 21.1：任意 m × n 的实线性系统 Ax=b 都有唯一的最小范数最小二乘解 x^{+}。
 
-几何结论是：把 b $\in\mathbb{R}$^{m} 正交投影到列空间 $U=\operatorname{Im} A$ 上，得到唯一最近点 p。$\|Ax-b\|_{2}^{2}$ 最小当且仅当 Ax=p。再在 $\mathbb{R}$ $^{n}=\operatorname{Ker} A\oplus(\operatorname{Ker} A)^{\perp}$ 里看，Ax=p 的解里范数最小的那一个落在 $(\operatorname{Ker} A)^{\perp}$，而且唯一，因为 A 限制在这个正交补上是单射。
+几何结论是：把 b ∈ℝ^{m} 正交投影到列空间 $U=\operatorname{Im} A$ 上，得到唯一最近点 p。$\|Ax-b\|_{2}^{2}$ 最小当且仅当 Ax=p。再在 ℝ $^{n}=\operatorname{Ker} A\oplus(\operatorname{Ker} A)^{\perp}$ 里看，Ax=p 的解里范数最小的那一个落在 $(\operatorname{Ker} A)^{\perp}$，而且唯一，因为 A 限制在这个正交补上是单射。
 
 正交投影的意思是：$U\oplus U^{\perp}$ 里的向量唯一地写成 u+v，投影 p_U 丢掉 $U^{\perp}$ 分量、留下 u。b 到子空间 U 的最近点就是 p_U(b)。对任意 $y\in U$，y-p 在 U 里，p-b 在 $U^{\perp}$ 里，勾股关系是
 
@@ -75,7 +75,7 @@ $$
 
 ![Figure 21.2 列空间上的正交投影](./assets/第21章_正交投影到列空间.png)
 
-图注：Figure 21.2。3 $\times$ 2 矩阵的列空间 $U=\operatorname{Im} A$ 画成 $\mathbb{R}$^{3} 里的平面。左图中 p 是 b 在 U 上的正交投影。右图中 b、y、p 是直角三角形的三个顶点。
+图注：Figure 21.2。3 × 2 矩阵的列空间 $U=\operatorname{Im} A$ 画成 ℝ³ 里的平面。左图中 p 是 b 在 U 上的正交投影。右图中 b、y、p 是直角三角形的三个顶点。
 
 因此 x 使残差最小，当且仅当 b-Ax 垂直于 A 的每一列，也就是
 
@@ -85,14 +85,14 @@ $$
 
 即正规方程。最小范数的那一个解还要用伪逆写出来。
 
-定义 21.1：设 A 为非零 m $\times$ n 矩阵，秩 r，$A=VDU^{\top}$ 是一组 SVD，
+定义 21.1：设 A 为非零 m × n 矩阵，秩 r，$A=VDU^{\top}$ 是一组 SVD，
 
 $$
 D=\begin{pmatrix}\Lambda&0_{r,n-r}\cr0_{m-r,r}&0_{m-r,n-r}\end{pmatrix},\quad
 \Lambda=\operatorname{diag}(\lambda_1,\ldots,\lambda_r),
 $$
 
-其中 $\lambda$_i 是非零奇异值。令 D^{+} 为 n $\times$ m 矩阵
+其中 $\lambda$_i 是非零奇异值。令 D^{+} 为 n × m 矩阵
 
 $$
 D^{+}=\begin{pmatrix}\Lambda^{-1}&0_{r,m-r}\cr0_{n-r,r}&0_{n-r,m-r}\end{pmatrix},\quad
@@ -125,13 +125,13 @@ $$
 
 特征值是 -1.1652,0,0,17.1652。书中给出的奇异值是 17.1652 与 1.1652（后者对应那个负特征值的绝对值）。D^{+} 的两个非零对角元是 0.0583 与 0.8583。由此算出的 A^{+} 与 $\operatorname{pinv}(A)$ 一致。U、V 的数值表在书中，这里不逐项抄录。
 
-列满秩（秩 n，因而 $m\ge n$）时，也可以走 QR，不必先做 SVD。存在 Householder 矩阵或单位矩阵 $H_1,\ldots,H_n$，以及秩 n 的上三角 m $\times$ n 矩阵 R，使 $A=H_1\cdots H_n R$。每个 H_i 是等距，所以
+列满秩（秩 n，因而 $m\ge n$）时，也可以走 QR，不必先做 SVD。存在 Householder 矩阵或单位矩阵 $H_1,\ldots,H_n$，以及秩 n 的上三角 m × n 矩阵 R，使 $A=H_1\cdots H_n R$。每个 H_i 是等距，所以
 
 $$
 \|Ax-b\|_{2}=\|Rx-H_n\cdots H_1 b\|_{2},
 $$
 
-最小二乘等价于 $Rx=H_n\cdots H_1 b$。写成 $R=\begin{pmatrix}R_1\cr 0\end{pmatrix}$、右端 $\begin{pmatrix}c\cr d\end{pmatrix}$ 后，R_1 是可逆 n $\times$ n 上三角（因为 A 秩为 n），最小范数解是 x^{+}=R_1^{-1}c。Householder 矩阵在本章只作为这组等距因子出现。
+最小二乘等价于 $Rx=H_n\cdots H_1 b$。写成 $R=\begin{pmatrix}R_1\cr 0\end{pmatrix}$、右端 $\begin{pmatrix}c\cr d\end{pmatrix}$ 后，R_1 是可逆 n × n 上三角（因为 A 秩为 n），最小范数解是 x^{+}=R_1^{-1}c。Householder 矩阵在本章只作为这组等距因子出现。
 
 👉 Householder 与 QR 的构造见第 17 章定理 17.2 及相关的第 12 章习题。📝待补全
 
@@ -148,14 +148,14 @@ $$
 
 满列秩时，这条左逆公式和上一节的 $(A^{\top}A)^{-1}A^{\top}b$ 是同一个解。不满秩时该逆不存在，只能回到定义 21.1。
 
-两个分数例子书中算到底。3 $\times$ 2 满列秩
+两个分数例子书中算到底。3 × 2 满列秩
 
 $$
 A=\begin{pmatrix}1&2\cr2&3\cr0&1\end{pmatrix},\quad
 A^{+}=\begin{pmatrix}-1/3&2/3&-4/3\cr1/3&-1/6&5/6\end{pmatrix}.
 $$
 
-2 $\times$ 4 满行秩
+2 × 4 满行秩
 
 $$
 A=\begin{pmatrix}1&2&3&0\cr0&1&1&-1\end{pmatrix},\quad
@@ -181,17 +181,17 @@ $$
 
 命题 21.4：AA^{+} 是到 A 的列空间的正交投影；A^{+}A 是到 $\operatorname{Ker}(A)^{\perp}=\operatorname{Im}(A^{\top})$ 的正交投影。
 
-命题 21.5：y 在列空间里，当且仅当 $V^{\top}y=\begin{pmatrix}z\cr0\end{pmatrix}$，z $\in\mathbb{R}$^{r}。命题 21.6：y 在 $\operatorname{Ker}(A)^{\perp}$ 里，当且仅当 $U^{\top}y=\begin{pmatrix}z\cr0\end{pmatrix}$。
+命题 21.5：y 在列空间里，当且仅当 $V^{\top}y=\begin{pmatrix}z\cr0\end{pmatrix}$，z ∈ℝ^{r}。命题 21.6：y 在 $\operatorname{Ker}(A)^{\perp}$ 里，当且仅当 $U^{\top}y=\begin{pmatrix}z\cr0\end{pmatrix}$。
 
 复矩阵上 U、V 改成酉矩阵，AA^{+} 与 A^{+}A 是 Hermite 正交投影。
 
-正规矩阵 $AA^{\top}=A^{\top}A$ 的伪逆可以直接从块对角化读出。实正规矩阵按定理 16.18 可写成 A=U $\Lambda$ $ U^{\top}$，$\Lambda$ 由 1 $\times$ 1 块 ($\lambda$_k) 和 2 $\times$ 2 块
+正规矩阵 $AA^{\top}=A^{\top}A$ 的伪逆可以直接从块对角化读出。实正规矩阵按定理 16.18 可写成 A=U $\Lambda$ $ U^{\top}$，$\Lambda$ 由 1 × 1 块 ($\lambda$_k) 和 2 × 2 块
 
 $$
 B_j=\begin{pmatrix}\lambda_j&-\mu_j\cr\mu_j&\lambda_j\end{pmatrix},\quad \mu_j\neq 0
 $$
 
-组成。这种 2 $\times$ 2 块对应一对共轭复特征值 $\lambda$ $_j\pm i$ $\mu$_j。
+组成。这种 2 × 2 块对应一对共轭复特征值 $\lambda$ $_j\pm i$ $\mu$_j。
 
 👉 实正规矩阵的块对角化是定理 16.18，见第 16 章。📝待补全
 
@@ -201,7 +201,7 @@ $$
 \Lambda^{+}=\begin{pmatrix}\Lambda_r^{-1}&0\cr0&0\end{pmatrix}.
 $$
 
-证明的结论：每个 2 $\times$ 2 块的奇异值是 $\sqrt{\lambda_j^{2}+\mu_j^{2}}=\sqrt{\det(B_j)}$，每个非零纯量块的奇异值是 |$\lambda$_j|。把这些因子收成正交矩阵 $\Theta$ 后，$\Lambda$= $\Theta$ $\Sigma$ 给出一组 SVD，再化简就得到 $\Lambda$^{+}。
+证明的结论：每个 2 × 2 块的奇异值是 $\sqrt{\lambda_j^{2}+\mu_j^{2}}=\sqrt{\det(B_j)}$，每个非零纯量块的奇异值是 |$\lambda$_j|。把这些因子收成正交矩阵 $\Theta$ 后，$\Lambda$= $\Theta$ $\Sigma$ 给出一组 SVD，再化简就得到 $\Lambda$^{+}。
 
 例 21.3 的块是 $\begin{pmatrix}1&-2\cr2&1\end{pmatrix}$、-4 和 0。前一块的行列式是 5，逆是
 
@@ -211,7 +211,7 @@ $$
 
 -4 的倒数是 -1/4。书中由此算出的 A^{+} 与 $\operatorname{pinv}(A)$ 一致。
 
-命题 21.8（Penrose）：m $\times$ n 矩阵（实或复）的伪逆是唯一满足下面四条的 n $\times$ m 矩阵
+命题 21.8（Penrose）：m × n 矩阵（实或复）的伪逆是唯一满足下面四条的 n × m 矩阵
 
 $$
 AA^{+}A=A,\quad A^{+}AA^{+}=A^{+},\quad (AA^{+})^{\top}=AA^{+},\quad (A^{+}A)^{\top}=A^{+}A.
@@ -229,7 +229,7 @@ $$
 
 👉 矩阵范数的定义见第 8 章。📝待补全
 
-命题 21.9（Eckart–Young）：A 为秩 r 的 m $\times$ n 矩阵，$A=VDU^{\top}$，奇异值 $\sigma$ $_1\ge\cdots\ge$ $\sigma$_p，$p=\min(m,n)$。对 k<r，在 2-范数下最接近 A 的秩 k 矩阵是
+命题 21.9（Eckart–Young）：A 为秩 r 的 m × n 矩阵，$A=VDU^{\top}$，奇异值 $\sigma$ $_1\ge\cdots\ge$ $\sigma$_p，$p=\min(m,n)$。对 k<r，在 2-范数下最接近 A 的秩 k 矩阵是
 
 $$
 A_k=\sum_{i=1}^{k}\sigma_i v_i u_i^{\top}=V\operatorname{diag}(\sigma_1,\ldots,\sigma_k,0,\ldots,0)U^{\top},
@@ -263,7 +263,7 @@ $$
 
 #### 主成分分析
 
-数据是 n 个点 $X_1,\ldots,X_n$，每个 X_i $\in\mathbb{R}$^{d} 写成行。n $\times$ d 矩阵 X 的第 i 行是 X_i，第 j 列 C_j 书中称为 feature vector（特征向量，这里指特征列）。计算机视觉里常常把数据点 X_i 本身叫做特征向量。同一句话在两边指的对象不同，读文献时要看它乘在行上还是列上。
+数据是 n 个点 $X_1,\ldots,X_n$，每个 X_i ∈ℝ^{d} 写成行。n × d 矩阵 X 的第 i 行是 X_i，第 j 列 C_j 书中称为 feature vector（特征向量，这里指特征列）。计算机视觉里常常把数据点 X_i 本身叫做特征向量。同一句话在两边指的对象不同，读文献时要看它乘在行上还是列上。
 
 PCA 要看数据的方差–协方差结构，用于两件事：用较少的主成分解释大部分变化；发现原先没料到的方向关系。
 
@@ -289,13 +289,13 @@ $$
 \mu=\frac1n(X_1+\cdots+X_n).
 $$
 
-$\mu$_j 就是第 j 列的均值。中心化矩阵 X-$\mu$ 的第 i 行是 X_i-$\mu$。样本协方差矩阵是 d $\times$ d 对称矩阵
+$\mu$_j 就是第 j 列的均值。中心化矩阵 X-$\mu$ 的第 i 行是 X_i-$\mu$。样本协方差矩阵是 d × d 对称矩阵
 
 $$
 \Sigma=\frac{1}{n-1}(X-\mu)^{\top}(X-\mu)=(\operatorname{cov}(C_i,C_j)).
 $$
 
-例 21.8 把上面的 x,y 合成 3 $\times$ 2 矩阵，得到 $\mu$=(1,2)，
+例 21.8 把上面的 x,y 合成 3 × 2 矩阵，得到 $\mu$=(1,2)，
 
 $$
 \Sigma=\begin{pmatrix}4&-1\cr-1&1\end{pmatrix}.
@@ -414,7 +414,7 @@ U_{d-k} 由 U 的前 d-k 列张成。
 
 例 21.11：胡须数据的最佳一维仿射近似是过质心、方向为 u_1=(0.9995,0.0325) 的直线。例 21.9 的质心是 $(1828.4,\ 5.6)$。例 21.11 把通过点写成 $(1824.4,\ 5.6)$。两处数字不一致，方向向量则与例 21.10 相同。笔记保留原文的两个数，不把其中一个改写成另一个。
 
-例 21.12 给每人加上出生月份。月份列的均值是 5.2。对这个 10 $\times$ 3 的中心化矩阵做 SVD，三个奇异值是 117.0706、22.0390、10.1571。书中给出
+例 21.12 给每人加上出生月份。月份列的均值是 5.2。对这个 10 × 3 的中心化矩阵做 SVD，三个奇异值是 117.0706、22.0390、10.1571。书中给出
 
 $$
 u_1=(0.0394,\ -0.9987,\ -0.0327),\qquad u_2=(0.1717,\ 0.0390,\ -0.9844).
@@ -422,7 +422,7 @@ $$
 
 u_1 基本上与年份轴反向，最显著的特征是出生年；u_2 接近胡须长度轴的反向，第二显著的特征是胡须长度。最佳仿射平面由 u_1,u_2 张成。
 
-压缩时只保留前 m<d 个主成分，也就是 VD 的前 m 列，用 $\mathbb{R}$^{m} 里的坐标代替原来的 $\mathbb{R}$^{d} 点。
+压缩时只保留前 m<d 个主成分，也就是 VD 的前 m 列，用 ℝ^{m} 里的坐标代替原来的 ℝ^{d} 点。
 
 🔑 关键速记：最佳仿射子空间过质心，由最大的那些主方向张成；法向是最小的那些奇异向量。
 
@@ -438,7 +438,7 @@ u_1 基本上与年份轴反向，最显著的特征是出生年；u_2 接近胡
 
 正规方程 $A^{\top}Ax=A^{\top}b$ 的解都使残差范数最小。其中范数最小的解才是 x^{+}=A^{+}b，它落在 $(\operatorname{Ker} A)^{\perp}$ 里。列满秩时两者重合，因为解本来就唯一。
 
-AA^{+} 是 m $\times$ m，投到列空间。A^{+}A 是 n $\times$ n，投到行空间。左逆出现在高矩阵满列秩，右逆出现在宽矩阵满行秩。
+AA^{+} 是 m × m，投到列空间。A^{+}A 是 n × n，投到行空间。左逆出现在高矩阵满列秩，右逆出现在宽矩阵满行秩。
 
 例 21.1 最小化的是竖直残差 (y_i-cx_i-d)^{2}。定理 21.12 的最佳仿射近似最小化的是点到子空间的正交距离平方和。直线拟合若改用正交距离，对应的是后者在 d=2、k=1 的情形，法向是最小奇异向量，方向是第一主方向。
 
