@@ -28,10 +28,10 @@ flowchart TD
 小波要把很长的声音或图像收成短得多的系数，播放或显示时仍然听不出、看不出差别。本章从 $\mathbb{R}^4$ 上的四个向量讲起：
 
 $$
-w_1=\begin{pmatrix}1\\1\\1\\1\end{pmatrix},\;
-w_2=\begin{pmatrix}1\\1\\-1\\-1\end{pmatrix},\;
-w_3=\begin{pmatrix}1\\-1\\0\\0\end{pmatrix},\;
-w_4=\begin{pmatrix}0\\0\\1\\-1\end{pmatrix}.
+w_1=\begin{pmatrix}1\cr1\cr1\cr1\end{pmatrix},\;
+w_2=\begin{pmatrix}1\cr1\cr-1\cr-1\end{pmatrix},\;
+w_3=\begin{pmatrix}1\cr-1\cr0\cr0\end{pmatrix},\;
+w_4=\begin{pmatrix}0\cr0\cr1\cr-1\end{pmatrix}.
 $$
 
 它们两两正交。正交是指两个向量的内积为 0：对应分量相乘再相加，结果是 0。一组两两正交、且都不是零向量的向量一定线性无关，所以可以当基。$\{w_1,w_2,w_3,w_4\}$ 就是这一维的 **Haar 基**。
@@ -42,9 +42,9 @@ $$
 
 $$
 W=\begin{pmatrix}
-1&1&1&0\\
-1&1&-1&0\\
-1&-1&0&1\\
+1&1&1&0\cr
+1&1&-1&0\cr
+1&-1&0&1\cr
 1&-1&0&-1
 \end{pmatrix},\qquad
 W^{-1}=\operatorname{diag}\!\left(\tfrac14,\tfrac14,\tfrac12,\tfrac12\right)W^\top.
@@ -108,9 +108,9 @@ $$
 $$
 h^j_k(i)=
 \begin{cases}
-0 & 1\le i\le k\,2^{n-j}\\
-1 & k\,2^{n-j}+1\le i\le k\,2^{n-j}+2^{n-j-1}\\
--1 & k\,2^{n-j}+2^{n-j-1}+1\le i\le (k+1)2^{n-j}\\
+0 & 1\le i\le k\,2^{n-j}\cr
+1 & k\,2^{n-j}+1\le i\le k\,2^{n-j}+2^{n-j-1}\cr
+-1 & k\,2^{n-j}+2^{n-j-1}+1\le i\le (k+1)2^{n-j}\cr
 0 & (k+1)2^{n-j}+1\le i\le 2^n
 \end{cases}
 $$
@@ -146,8 +146,8 @@ $$
 $$
 \psi(x)=
 \begin{cases}
-1 & 0\le x<1/2\\
--1 & 1/2\le x<1\\
+1 & 0\le x<1/2\cr
+-1 & 1/2\le x<1\cr
 0 & \text{其他}
 \end{cases}.
 $$
@@ -164,7 +164,7 @@ $$
 
 $$
 \begin{aligned}
-c^j(i)&=\frac{c^{j+1}(2i-1)+c^{j+1}(2i)}{2},\\
+c^j(i)&=\frac{c^{j+1}(2i-1)+c^{j+1}(2i)}{2},\cr
 c^j(2^j+i)&=\frac{c^{j+1}(2i-1)-c^{j+1}(2i)}{2}.
 \end{aligned}
 $$
@@ -175,7 +175,7 @@ $$
 
 $$
 \begin{aligned}
-u^{j+1}(2i-1)&=u^j(i)+u^j(2^j+i),\\
+u^{j+1}(2i-1)&=u^j(i)+u^j(2^j+i),\cr
 u^{j+1}(2i)&=u^j(i)-u^j(2^j+i).
 \end{aligned}
 $$
@@ -197,9 +197,9 @@ $n=3$ 的书中例子如下。正变换把采样收成系数，重建按同一�
 
 #### Kronecker 积构造
 
-把 $W_n$ 分成左右两块，每块是 $2^n\times 2^{n-1}$。右块的第一列是 $(1,-1,0,\ldots,0)$，后面 $2^{n-1}-1$ 列是它的平移。它可以用单位矩阵 $I_{2^{n-1}}$ 造出来：每个 1 换成列 $\begin{pmatrix}1\\-1\end{pmatrix}$，每个 0 换成列 $\begin{pmatrix}0\\0\end{pmatrix}$。
+把 $W_n$ 分成左右两块，每块是 $2^n\times 2^{n-1}$。右块的第一列是 $(1,-1,0,\ldots,0)$，后面 $2^{n-1}-1$ 列是它的平移。它可以用单位矩阵 $I_{2^{n-1}}$ 造出来：每个 1 换成列 $\begin{pmatrix}1\cr-1\end{pmatrix}$，每个 0 换成列 $\begin{pmatrix}0\cr0\end{pmatrix}$。
 
-左块来自 $W_{n-1}$：每个 1 换成 $\begin{pmatrix}1\\1\end{pmatrix}$，每个 $-1$ 换成 $\begin{pmatrix}-1\\-1\end{pmatrix}$，每个 0 换成 $\begin{pmatrix}0\\0\end{pmatrix}$。$n=3$ 时，左块就是这样从 $W_2$ 长出来的。
+左块来自 $W_{n-1}$：每个 1 换成 $\begin{pmatrix}1\cr1\end{pmatrix}$，每个 $-1$ 换成 $\begin{pmatrix}-1\cr-1\end{pmatrix}$，每个 0 换成 $\begin{pmatrix}0\cr0\end{pmatrix}$。$n=3$ 时，左块就是这样从 $W_2$ 长出来的。
 
 这种「用一块矩阵替换另一个矩阵的每个条目」就是 Kronecker product（Kronecker 积），也叫 tensor product（张量积）。
 
@@ -215,16 +215,16 @@ $$
 
 $$
 W_n=\left(
-W_{n-1}\otimes\begin{pmatrix}1\\1\end{pmatrix}
+W_{n-1}\otimes\begin{pmatrix}1\cr1\end{pmatrix}
 \;\middle|\;
-I_{2^{n-1}}\otimes\begin{pmatrix}1\\-1\end{pmatrix}
+I_{2^{n-1}}\otimes\begin{pmatrix}1\cr-1\end{pmatrix}
 \right).
 $$
 
 再定义对角矩阵 $B_n$。$B_1=2I_2=\operatorname{diag}(2,2)$，而
 
 $$
-B_{n+1}=2\begin{pmatrix}B_n&0\\0&I_{2^n}\end{pmatrix}.
+B_{n+1}=2\begin{pmatrix}B_n&0\cr0&I_{2^n}\end{pmatrix}.
 $$
 
 由 Kronecker 形式可以证明：对一切 $n\ge 1$，
@@ -245,7 +245,7 @@ Haar 基把信号拆成多层。系数下标小，描述的是粗结构；下标
 
 $$
 \begin{aligned}
-u&=(2.4,\,2.2,\,2.15,\,2.05,\,6.8,\,2.8,\,-1.1,\,-1.3),\\
+u&=(2.4,\,2.2,\,2.15,\,2.05,\,6.8,\,2.8,\,-1.1,\,-1.3),\cr
 c&=(2,\,0.2,\,0.1,\,3,\,0.1,\,0.05,\,2,\,0.1).
 \end{aligned}
 $$
@@ -296,7 +296,7 @@ $$
 
 $$
 \begin{aligned}
-u^{j+1}(2i-1)&=\frac{u^j(i)+u^j(2^j+i)}{\sqrt{2}},\\
+u^{j+1}(2i-1)&=\frac{u^j(i)+u^j(2^j+i)}{\sqrt{2}},\cr
 u^{j+1}(2i)&=\frac{u^j(i)-u^j(2^j+i)}{\sqrt{2}}.
 \end{aligned}
 $$
@@ -305,7 +305,7 @@ $$
 
 $$
 \begin{aligned}
-c^j(i)&=\frac{c^{j+1}(2i-1)+c^{j+1}(2i)}{\sqrt{2}},\\
+c^j(i)&=\frac{c^{j+1}(2i-1)+c^{j+1}(2i)}{\sqrt{2}},\cr
 c^j(2^j+i)&=\frac{c^{j+1}(2i-1)-c^{j+1}(2i)}{\sqrt{2}}.
 \end{aligned}
 $$
@@ -404,11 +404,11 @@ $$
 书中先给出三个例子。$2\times 2$ 和 $4\times 4$ 是
 
 $$
-H_2=\begin{pmatrix}1&1\\1&-1\end{pmatrix},\qquad
+H_2=\begin{pmatrix}1&1\cr1&-1\end{pmatrix},\qquad
 H_4=\begin{pmatrix}
-1&1&1&1\\
-1&-1&1&-1\\
-1&1&-1&-1\\
+1&1&1&1\cr
+1&-1&1&-1\cr
+1&1&-1&-1\cr
 1&-1&-1&1
 \end{pmatrix}.
 $$
@@ -424,7 +424,7 @@ $H_8$ 书中全文印出，它是下面命题再做一次得到的，这里不�
 **命题 4.2.**（Sylvester, 1867）若 $H$ 是 $n$ 阶 Hadamard 矩阵，则 $2n$ 阶分块矩阵
 
 $$
-\begin{pmatrix}H&H\\H&-H\end{pmatrix}
+\begin{pmatrix}H&H\crH&-H\end{pmatrix}
 $$
 
 仍是 Hadamard 矩阵。证明留在习题 4.3。

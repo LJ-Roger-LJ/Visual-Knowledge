@@ -43,16 +43,16 @@ $$
 例 21.1 写成矩阵就是
 
 $$
-\begin{pmatrix}1&x_1\\1&x_2\\1&x_3\end{pmatrix}\begin{pmatrix}d\\c\end{pmatrix}
-=\begin{pmatrix}y_1\\y_2\\y_3\end{pmatrix},
+\begin{pmatrix}1&x_1\cr1&x_2\cr1&x_3\end{pmatrix}\begin{pmatrix}d\crc\end{pmatrix}
+=\begin{pmatrix}y_1\cry_2\cry_3\end{pmatrix},
 $$
 
 正规方程为
 
 $$
-\begin{pmatrix}3&x_1+x_2+x_3\\ x_1+x_2+x_3& x_1^{2}+x_2^{2}+x_3^{2}\end{pmatrix}
-\begin{pmatrix}d\\c\end{pmatrix}
-=\begin{pmatrix}y_1+y_2+y_3\\ x_1y_1+x_2y_2+x_3y_3\end{pmatrix}.
+\begin{pmatrix}3&x_1+x_2+x_3\cr x_1+x_2+x_3& x_1^{2}+x_2^{2}+x_3^{2}\end{pmatrix}
+\begin{pmatrix}d\crc\end{pmatrix}
+=\begin{pmatrix}y_1+y_2+y_3\cr x_1y_1+x_2y_2+x_3y_3\end{pmatrix}.
 $$
 
 列相关时正规方程的解不唯一。下一节说明：在所有使 $\|Ax-b\|_{2}^{2}$ 最小的 $x$ 里，仍有唯一的最小范数解。
@@ -88,14 +88,14 @@ $$
 定义 21.1：设 $A$ 为非零 $m\times n$ 矩阵，秩 $r$，$A=VDU^{\top}$ 是一组 SVD，
 
 $$
-D=\begin{pmatrix}\Lambda&0_{r,n-r}\\0_{m-r,r}&0_{m-r,n-r}\end{pmatrix},\quad
+D=\begin{pmatrix}\Lambda&0_{r,n-r}\cr0_{m-r,r}&0_{m-r,n-r}\end{pmatrix},\quad
 \Lambda=\operatorname{diag}(\lambda_1,\ldots,\lambda_r),
 $$
 
 其中 $\lambda_i$ 是非零奇异值。令 $D^{+}$ 为 $n\times m$ 矩阵
 
 $$
-D^{+}=\begin{pmatrix}\Lambda^{-1}&0_{r,m-r}\\0_{n-r,r}&0_{n-r,m-r}\end{pmatrix},\quad
+D^{+}=\begin{pmatrix}\Lambda^{-1}&0_{r,m-r}\cr0_{n-r,r}&0_{n-r,m-r}\end{pmatrix},\quad
 \Lambda^{-1}=\operatorname{diag}(1/\lambda_1,\ldots,1/\lambda_r).
 $$
 
@@ -120,7 +120,7 @@ $$
 例 21.2 取秩 2 的
 
 $$
-A=\begin{pmatrix}1&2&3&4\\2&3&4&5\\3&4&5&6\\4&5&6&7\end{pmatrix},
+A=\begin{pmatrix}1&2&3&4\cr2&3&4&5\cr3&4&5&6\cr4&5&6&7\end{pmatrix},
 $$
 
 特征值是 $-1.1652,0,0,17.1652$。书中给出的奇异值是 $17.1652$ 与 $1.1652$（后者对应那个负特征值的绝对值）。$D^{+}$ 的两个非零对角元是 $0.0583$ 与 $0.8583$。由此算出的 $A^{+}$ 与 $\operatorname{pinv}(A)$ 一致。$U$、$V$ 的数值表在书中，这里不逐项抄录。
@@ -131,7 +131,7 @@ $$
 \|Ax-b\|_{2}=\|Rx-H_n\cdots H_1 b\|_{2},
 $$
 
-最小二乘等价于 $Rx=H_n\cdots H_1 b$。写成 $R=\begin{pmatrix}R_1\\ 0\end{pmatrix}$、右端 $\begin{pmatrix}c\\ d\end{pmatrix}$ 后，$R_1$ 是可逆 $n\times n$ 上三角（因为 $A$ 秩为 $n$），最小范数解是 $x^{+}=R_1^{-1}c$。Householder 矩阵在本章只作为这组等距因子出现。
+最小二乘等价于 $Rx=H_n\cdots H_1 b$。写成 $R=\begin{pmatrix}R_1\cr 0\end{pmatrix}$、右端 $\begin{pmatrix}c\cr d\end{pmatrix}$ 后，$R_1$ 是可逆 $n\times n$ 上三角（因为 $A$ 秩为 $n$），最小范数解是 $x^{+}=R_1^{-1}c$。Householder 矩阵在本章只作为这组等距因子出现。
 
 👉 Householder 与 QR 的构造见第 17 章定理 17.2 及相关的第 12 章习题。📝待补全
 
@@ -151,23 +151,23 @@ $$
 两个分数例子书中算到底。$3\times 2$ 满列秩
 
 $$
-A=\begin{pmatrix}1&2\\2&3\\0&1\end{pmatrix},\quad
-A^{+}=\begin{pmatrix}-1/3&2/3&-4/3\\1/3&-1/6&5/6\end{pmatrix}.
+A=\begin{pmatrix}1&2\cr2&3\cr0&1\end{pmatrix},\quad
+A^{+}=\begin{pmatrix}-1/3&2/3&-4/3\cr1/3&-1/6&5/6\end{pmatrix}.
 $$
 
 $2\times 4$ 满行秩
 
 $$
-A=\begin{pmatrix}1&2&3&0\\0&1&1&-1\end{pmatrix},\quad
-A^{+}=\begin{pmatrix}3/17&-5/17\\1/17&4/17\\4/17&-1/17\\5/17&-14/17\end{pmatrix}.
+A=\begin{pmatrix}1&2&3&0\cr0&1&1&-1\end{pmatrix},\quad
+A^{+}=\begin{pmatrix}3/17&-5/17\cr1/17&4/17\cr4/17&-1/17\cr5/17&-14/17\end{pmatrix}.
 $$
 
 一般秩时，由 $A=V\Sigma U^{\top}$ 直接得到
 
 $$
 \begin{aligned}
-AA^{+}&=V\begin{pmatrix}I_r&0\\0&0\end{pmatrix}V^{\top},\\
-A^{+}A&=U\begin{pmatrix}I_r&0\\0&0\end{pmatrix}U^{\top}.
+AA^{+}&=V\begin{pmatrix}I_r&0\cr0&0\end{pmatrix}V^{\top},\cr
+A^{+}A&=U\begin{pmatrix}I_r&0\cr0&0\end{pmatrix}U^{\top}.
 \end{aligned}
 $$
 
@@ -181,14 +181,14 @@ $$
 
 命题 21.4：$AA^{+}$ 是到 $A$ 的列空间的正交投影；$A^{+}A$ 是到 $\operatorname{Ker}(A)^{\perp}=\operatorname{Im}(A^{\top})$ 的正交投影。
 
-命题 21.5：$y$ 在列空间里，当且仅当 $V^{\top}y=\begin{pmatrix}z\\0\end{pmatrix}$，$z\in\mathbb{R}^{r}$。命题 21.6：$y$ 在 $\operatorname{Ker}(A)^{\perp}$ 里，当且仅当 $U^{\top}y=\begin{pmatrix}z\\0\end{pmatrix}$。
+命题 21.5：$y$ 在列空间里，当且仅当 $V^{\top}y=\begin{pmatrix}z\cr0\end{pmatrix}$，$z\in\mathbb{R}^{r}$。命题 21.6：$y$ 在 $\operatorname{Ker}(A)^{\perp}$ 里，当且仅当 $U^{\top}y=\begin{pmatrix}z\cr0\end{pmatrix}$。
 
 复矩阵上 $U$、$V$ 改成酉矩阵，$AA^{+}$ 与 $A^{+}A$ 是 Hermite 正交投影。
 
 正规矩阵 $AA^{\top}=A^{\top}A$ 的伪逆可以直接从块对角化读出。实正规矩阵按定理 16.18 可写成 $A=U\Lambda U^{\top}$，$\Lambda$ 由 $1\times 1$ 块 $(\lambda_k)$ 和 $2\times 2$ 块
 
 $$
-B_j=\begin{pmatrix}\lambda_j&-\mu_j\\\mu_j&\lambda_j\end{pmatrix},\quad \mu_j\neq 0
+B_j=\begin{pmatrix}\lambda_j&-\mu_j\cr\mu_j&\lambda_j\end{pmatrix},\quad \mu_j\neq 0
 $$
 
 组成。这种 $2\times 2$ 块对应一对共轭复特征值 $\lambda_j\pm i\mu_j$。
@@ -198,15 +198,15 @@ $$
 命题 21.7：此时 $A^{+}=U\Lambda^{+}U^{\top}$。若 $\Lambda=\operatorname{diag}(\Lambda_r,0)$ 且 $\Lambda_r$ 秩为 $r$，则
 
 $$
-\Lambda^{+}=\begin{pmatrix}\Lambda_r^{-1}&0\\0&0\end{pmatrix}.
+\Lambda^{+}=\begin{pmatrix}\Lambda_r^{-1}&0\cr0&0\end{pmatrix}.
 $$
 
 证明的结论：每个 $2\times 2$ 块的奇异值是 $\sqrt{\lambda_j^{2}+\mu_j^{2}}=\sqrt{\det(B_j)}$，每个非零纯量块的奇异值是 $|\lambda_j|$。把这些因子收成正交矩阵 $\Theta$ 后，$\Lambda=\Theta\Sigma$ 给出一组 SVD，再化简就得到 $\Lambda^{+}$。
 
-例 21.3 的块是 $\begin{pmatrix}1&-2\\2&1\end{pmatrix}$、$-4$ 和 $0$。前一块的行列式是 $5$，逆是
+例 21.3 的块是 $\begin{pmatrix}1&-2\cr2&1\end{pmatrix}$、$-4$ 和 $0$。前一块的行列式是 $5$，逆是
 
 $$
-\begin{pmatrix}1/5&2/5\\-2/5&1/5\end{pmatrix},
+\begin{pmatrix}1/5&2/5\cr-2/5&1/5\end{pmatrix},
 $$
 
 $-4$ 的倒数是 $-1/4$。书中由此算出的 $A^{+}$ 与 $\operatorname{pinv}(A)$ 一致。
@@ -248,7 +248,7 @@ $A_k$ 可以用 $(m+n)k$ 个数存放，原矩阵要 $mn$ 个数。$k\ll m$ 时�
 例 21.4 使用第 8.5 节那个病态的对称正定矩阵
 
 $$
-A=\begin{pmatrix}10&7&8&7\\7&5&6&5\\8&6&10&9\\7&5&9&10\end{pmatrix}.
+A=\begin{pmatrix}10&7&8&7\cr7&5&6&5\cr8&6&10&9\cr7&5&9&10\end{pmatrix}.
 $$
 
 因为它对称正定，SVD 取 $A=UDU^{\top}$。四个奇异值是 $30.2887$、$3.8581$、$0.8431$、$0.0102$。把 $\sigma_3=\sigma_4=0$ 得到最佳秩 2 近似 $A_2$。书中给出的 $A_2$ 左上角是 $9.9207$，对应原矩阵的 $10$。按命题 21.9，这个秩 2 近似的 2-范数误差等于下一个奇异值 $0.8431$。$U$ 与 $A_2$ 的其余数字在书中，不逐项抄录。
@@ -298,7 +298,7 @@ $$
 例 21.8 把上面的 $x,y$ 合成 $3\times 2$ 矩阵，得到 $\mu=(1,2)$，
 
 $$
-\Sigma=\begin{pmatrix}4&-1\\-1&1\end{pmatrix}.
+\Sigma=\begin{pmatrix}4&-1\cr-1&1\end{pmatrix}.
 $$
 
 例 21.9 用 10 位数学家的出生年和胡须长度（厘米）作 $d=2$ 的数据。质心是 $\mu_1=1828.4$、$\mu_2=5.6$。下表是书中的原始数据，中心化就是各列减去这两个均值。Figure 21.3 画的是中心化后的点；主方向画在后面的 Figure 21.4 里。

@@ -28,21 +28,21 @@ Bézier spline $F$ 由曲线段 $C_1,\ldots,C_m$（$m\ge 2$）拼成，定义在
 
 $$
 \begin{pmatrix}
-7/2 & 1 & & & 0 \\
-1 & 4 & 1 & & \\
-& \ddots & \ddots & \ddots & \\
-& & 1 & 4 & 1 \\
+7/2 & 1 & & & 0 \cr
+1 & 4 & 1 & & \cr
+& \ddots & \ddots & \ddots & \cr
+& & 1 & 4 & 1 \cr
 0 & & & 1 & 7/2
 \end{pmatrix}
 \begin{pmatrix}
-d_1 \\ d_2 \\ \vdots \\ d_{N-2} \\ d_{N-1}
+d_1 \cr d_2 \cr \vdots \cr d_{N-2} \cr d_{N-1}
 \end{pmatrix}
 =
 \begin{pmatrix}
-6x_1-\tfrac{3}{2}d_0 \\
-6x_2 \\
-\vdots \\
-6x_{N-2} \\
+6x_1-\tfrac{3}{2}d_0 \cr
+6x_2 \cr
+\vdots \cr
+6x_{N-2} \cr
 6x_{N-1}-\tfrac{3}{2}d_N
 \end{pmatrix}.
 $$
@@ -80,9 +80,9 @@ $$
 
 $$
 \begin{aligned}
-x_n&=a_{nn}^{-1}b_n,\\
-x_{n-1}&=a_{n-1\,n-1}^{-1}(b_{n-1}-a_{n-1\,n}x_n),\\
-&\vdots\\
+x_n&=a_{nn}^{-1}b_n,\cr
+x_{n-1}&=a_{n-1\,n-1}^{-1}(b_{n-1}-a_{n-1\,n}x_n),\cr
+&\vdots\cr
 x_1&=a_{11}^{-1}(b_1-a_{12}x_2-\cdots-a_{1n}x_n).
 \end{aligned}
 $$
@@ -322,7 +322,7 @@ $$
 $2\times 2$ 的情形可以写完。设
 
 $$
-A=\begin{pmatrix}a&c\\ c&b\end{pmatrix},
+A=\begin{pmatrix}a&c\cr c&b\end{pmatrix},
 $$
 
 则 $x^\top Ax=ax^2+2cxy+by^2$。配成平方（书中式 $(\dagger)$）：
@@ -357,7 +357,7 @@ SPD 的逆仍是 SPD。两个 SPD 矩阵的乘积却不一定是 SPD：第 270 �
 把 $A$ 写成第一行、第一列与右下角：
 
 $$
-A=\begin{pmatrix}a_{11}&W^\top\\ W&C\end{pmatrix}.
+A=\begin{pmatrix}a_{11}&W^\top\cr W&C\end{pmatrix}.
 $$
 
 因 $a_{11}>0$，令 $\alpha=\sqrt{a_{11}}$，则有唯一分解 $A=B_1 A_1 B_1^\top$，其中 $B_1$ 下三角且对角为正。右下角
@@ -483,13 +483,13 @@ $$
 具体求法：把 $(A,b)$ 化成 $(A',b')$。$b'$ 无主元才有解。设有 $r$ 个主元。把主元列换到左边（同时重排变量）之后，系数变成
 
 $$
-R=\begin{pmatrix}I_r&F\\ 0&0\end{pmatrix},\qquad b'=\begin{pmatrix}d\\ 0\end{pmatrix}.
+R=\begin{pmatrix}I_r&F\cr 0&0\end{pmatrix},\qquad b'=\begin{pmatrix}d\cr 0\end{pmatrix}.
 $$
 
 特解是主元变量取 $d$、自由变量取 0，即 $x_0=(d,0)$。核由
 
 $$
-N=\begin{pmatrix}-F\\ I_{n-r}\end{pmatrix}
+N=\begin{pmatrix}-F\cr I_{n-r}\end{pmatrix}
 $$
 
 的列张成。这些列含有一块单位阵，所以线性无关，构成核的基。通解是特解加上自由变量与这些列的线性组合。
@@ -505,14 +505,14 @@ $$
 同样可以定义列最简形，而且它也唯一。先把 $A$ 化成行最简形 $R$，再用列运算把主元列清成标准基，得到
 
 $$
-\begin{pmatrix}I_r&0\\ 0&0\end{pmatrix}.
+\begin{pmatrix}I_r&0\cr 0&0\end{pmatrix}.
 $$
 
 因此存在两组初等矩阵，使
 
 $$
 E_p\cdots E_1\, A\, F_1\cdots F_q
-=\begin{pmatrix}I_r&0\\ 0&0\end{pmatrix}.
+=\begin{pmatrix}I_r&0\cr 0&0\end{pmatrix}.
 $$
 
 右边叫做 $A$ 的 rank normal form（秩标准形），$r$ 就是秩。
@@ -556,7 +556,7 @@ dilation 在合适的基下就是 $E_{1,\alpha}$（$\alpha\neq 0,1$）；每个 
 命题 7.24。任意可逆矩阵 $A$ 都有一个由 transvection 复合而成的 $S$，使
 
 $$
-SA=\begin{pmatrix}I_{n-1}&0\\ 0&\alpha\end{pmatrix}=E_{n,\alpha},\qquad \alpha=\det(A).
+SA=\begin{pmatrix}I_{n-1}&0\cr 0&\alpha\end{pmatrix}=E_{n,\alpha},\qquad \alpha=\det(A).
 $$
 
 证明是习题 7.10 与 7.11，要用熟练的 $E_{i,j;\beta}$，这里不展开。
